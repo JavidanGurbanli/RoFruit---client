@@ -14,6 +14,6 @@ i18n
     },
     order: ["localstorage"],
     backend: {
-      loadPath: "../locales/{{lng}}/{{ns}}.json",
+      loadPath: "./public/locales/{{lng}}/{{ns}}.json",
     }
   });
