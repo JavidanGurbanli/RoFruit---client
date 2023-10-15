@@ -1,6 +1,7 @@
 {
   "name": "rofruit",
   "version": "0.1.0",
+  "homepage": "/rofruit/",
   "private": true,
   "dependencies": {
     "@chakra-ui/react": "^2.8.0",

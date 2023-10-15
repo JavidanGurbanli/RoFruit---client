@@ -14,6 +14,6 @@ i18n
     },
     order: ["localstorage"],
     backend: {
-      loadPath: "{{lng}}/{{ns}}.json",
+      loadPath: "/rofruit/locales/{{lng}}/{{ns}}.json",
     }
   });
