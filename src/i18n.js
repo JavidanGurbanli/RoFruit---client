@@ -7,13 +7,13 @@ i18n
   .use(LanguageDetector)
   .use(HttpApi)
   .init({
-    ns: ['home'],
+    // ns: ['home'],
     fallbackLng: "en",
     interpolation: {
       escapeValue: false,
     },
     order: ["localstorage"],
     backend: {
-      loadPath: "public/locales/{{lng}}/{{ns}}.json",
+      loadPath: "/public/locales/{{lng}}/{{ns}}.json",
     }
   });
