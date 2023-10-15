@@ -16,6 +16,7 @@ import Loading from "../../components/Loading/Loading";
 import { Helmet } from "react-helmet";
 
 const Products = () => {
+  const apiUrl = process.env.REACT_APP_SERVER_URL;
   const { t } = useTranslation(["products", "header"]);
   const { category } = useParams();
   const [isLoading, setIsLoading] = useState(true);
@@ -32,7 +33,7 @@ const Products = () => {
   }, [currentPage]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/v1/products")
+    fetch(`${apiUrl}/api/v1/products`)
       .then((response) => response.json())
       .then((data) => {
         if (category === "all") {

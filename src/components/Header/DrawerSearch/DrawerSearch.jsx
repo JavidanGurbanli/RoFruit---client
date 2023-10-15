@@ -13,6 +13,7 @@ import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 const DrawerSearch = () => {
+  const apiUrl = process.env.REACT_APP_SERVER_URL;
   const { t } = useTranslation(["header"]);
   const navigate = useNavigate();
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -27,7 +28,7 @@ const DrawerSearch = () => {
   };
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/v1/products")
+    fetch(`${apiUrl}/api/v1/products`)
       .then((response) => response.json())
       .then((data) => {
         setAllProducts(data);

@@ -6,6 +6,7 @@ import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
 
 function Search() {
+  const apiUrl = process.env.REACT_APP_SERVER_URL;
   const { t } = useTranslation(["header"]);
   const [search, setSearch] = useSearchParams();
   const searchText = search.get("query");
@@ -13,7 +14,7 @@ function Search() {
   const [allProducts, setAllProducts] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/v1/products")
+    fetch(`${apiUrl}/api/v1/products`)
       .then((response) => response.json())
       .then((data) => setAllProducts(data))
       .catch((error) => console.error("Error fetching data:", error));

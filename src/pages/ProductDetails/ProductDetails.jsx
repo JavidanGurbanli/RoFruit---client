@@ -29,6 +29,7 @@ import {
 import { Helmet } from "react-helmet";
 
 const ProductDetails = () => {
+  const apiUrl = process.env.REACT_APP_SERVER_URL;
   const location = useLocation()
   const { t } = useTranslation(["productDetails"]);
   const { id, category } = useParams();
@@ -46,7 +47,7 @@ const ProductDetails = () => {
   const priceField =
     pricingType === "retail" ? "retail_price" : "wholesale_price";
   useEffect(() => {
-    fetch("http://localhost:5000/api/v1/products")
+    fetch(`${apiUrl}/api/v1/products`)
       .then((response) => response.json())
       .then((data) => {
         const foundProduct = data.find(
