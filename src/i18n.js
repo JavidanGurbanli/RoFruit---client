@@ -7,6 +7,7 @@ i18n
   .use(LanguageDetector)
   .use(HttpApi)
   .init({
+    ns: ['home'],
     fallbackLng: "en",
     interpolation: {
       escapeValue: false,
