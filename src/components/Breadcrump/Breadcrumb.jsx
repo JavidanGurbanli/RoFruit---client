@@ -5,6 +5,7 @@ import { BiHome } from "react-icons/bi";
 import { useTranslation } from "react-i18next";
 
 const Breadcrumb = () => {
+  const apiUrl = process.env.REACT_APP_SERVER_URL;
   const { t } = useTranslation(["header"]);
   const location = useLocation();
   const pathSegments = location.pathname.split("/");
@@ -14,7 +15,7 @@ const Breadcrumb = () => {
 
   useEffect(() => {
     if (id) {
-      fetch("http://localhost:5000/api/v1/products")
+      fetch(`${apiUrl}/api/v1/products`)
         .then((response) => response.json())
         .then((data) => {
           const foundProduct = data.find(
