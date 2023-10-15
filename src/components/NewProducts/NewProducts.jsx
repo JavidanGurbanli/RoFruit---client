@@ -4,10 +4,11 @@ import "./NewProducts.scss";
 import Loading from "../Loading/Loading";
 
 const NewProducts = () => {
+  const apiUrl = process.env.REACT_APP_SERVER_URL;
   const [newProducts, setNewProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
-    fetch("http://localhost:5000/api/v1/products")
+    fetch(`${apiUrl}/api/v1/products`)
       .then((response) => response.json())
       .then((data) => {
         const sortedProducts = data.sort(
